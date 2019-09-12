@@ -1,0 +1,196 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AvanzaService - kavanza</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kavanza</a>&nbsp;/&nbsp;<a href="../index.html">com.github.widarlein.kavanza.service</a>&nbsp;/&nbsp;<a href="./index.html">AvanzaService</a><br/>
+<br/>
+<h1>AvanzaService</h1>
+<code><span class="keyword">interface </span><span class="identifier">AvanzaService</span></code>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-to-watchlist.html">addToWatchlist</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addToWatchlist</span><span class="symbol">(</span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$addToWatchlist(kotlin.String, kotlin.String)/watchlistId">watchlistId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$addToWatchlist(kotlin.String, kotlin.String)/orderbookId">orderbookId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html"><span class="identifier">Void</span></a><span class="symbol">&gt;</span></code>
+<p>Adds a specific orderbook (equity security: stock, certificate, etc) to a given watchlist</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="delete-order.html">deleteOrder</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">deleteOrder</span><span class="symbol">(</span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$deleteOrder(kotlin.String, kotlin.String)/accountId">accountId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$deleteOrder(kotlin.String, kotlin.String)/orderId">orderId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model.order/-order-operation-response/index.html"><span class="identifier">OrderOperationResponse</span></a><span class="symbol">&gt;</span></code>
+<p>Delete an order</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="edit-order.html">editOrder</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">editOrder</span><span class="symbol">(</span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$editOrder(com.github.widarlein.kavanza.model.InstrumentType, kotlin.String, com.github.widarlein.kavanza.model.order.OrderOptions)/instrumentType">instrumentType</span><span class="symbol">:</span>&nbsp;<a href="../../com.github.widarlein.kavanza.model/-instrument-type/index.html"><span class="identifier">InstrumentType</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$editOrder(com.github.widarlein.kavanza.model.InstrumentType, kotlin.String, com.github.widarlein.kavanza.model.order.OrderOptions)/orderId">orderId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$editOrder(com.github.widarlein.kavanza.model.InstrumentType, kotlin.String, com.github.widarlein.kavanza.model.order.OrderOptions)/orderOptions">orderOptions</span><span class="symbol">:</span>&nbsp;<a href="../../com.github.widarlein.kavanza.model.order/-order-options/index.html"><span class="identifier">OrderOptions</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model.order/-order-operation-response/index.html"><span class="identifier">OrderOperationResponse</span></a><span class="symbol">&gt;</span></code>
+<p>Edit an order</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-account-overview.html">getAccountOverview</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAccountOverview</span><span class="symbol">(</span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$getAccountOverview(kotlin.String)/accountId">accountId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-account-overview/index.html"><span class="identifier">AccountOverview</span></a><span class="symbol">&gt;</span></code>
+<p>Gets an overview over a specific account</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-chart-data.html">getChartData</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getChartData</span><span class="symbol">(</span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$getChartData(kotlin.String, com.github.widarlein.kavanza.model.Period)/orderbookId">orderbookId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$getChartData(kotlin.String, com.github.widarlein.kavanza.model.Period)/period">period</span><span class="symbol">:</span>&nbsp;<a href="../../com.github.widarlein.kavanza.model/-period/index.html"><span class="identifier">Period</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-chart-data/index.html"><span class="identifier">ChartData</span></a><span class="symbol">&gt;</span></code>
+<p>Gets prices over time for a specific orderbook</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-deals-and-orders.html">getDealsAndOrders</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDealsAndOrders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-deals-and-orders/index.html"><span class="identifier">DealsAndOrders</span></a><span class="symbol">&gt;</span></code>
+<p>Gets all current deals and orders</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-inspiration-list.html">getInspirationList</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getInspirationList</span><span class="symbol">(</span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$getInspirationList(com.github.widarlein.kavanza.model.ListType)/listType">listType</span><span class="symbol">:</span>&nbsp;<a href="../../com.github.widarlein.kavanza.model/-list-type/index.html"><span class="identifier">ListType</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-inspiration-list/index.html"><span class="identifier">InspirationList</span></a><span class="symbol">&gt;</span></code>
+<p>Gets a list of inspiration lists of a certain type</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-inspiration-lists.html">getInspirationLists</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getInspirationLists</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-inspiration-list/index.html"><span class="identifier">InspirationList</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Gets a list of all inspiration lists</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-instrument.html">getInstrument</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getInstrument</span><span class="symbol">(</span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$getInstrument(com.github.widarlein.kavanza.model.InstrumentType, kotlin.String)/instrumentType">instrumentType</span><span class="symbol">:</span>&nbsp;<a href="../../com.github.widarlein.kavanza.model/-instrument-type/index.html"><span class="identifier">InstrumentType</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$getInstrument(com.github.widarlein.kavanza.model.InstrumentType, kotlin.String)/instrumentId">instrumentId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-instrument-data/index.html"><span class="identifier">InstrumentData</span></a><span class="symbol">&gt;</span></code>
+<p>Gets details about a specified instrument</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-order.html">getOrder</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOrder</span><span class="symbol">(</span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$getOrder(com.github.widarlein.kavanza.model.InstrumentType, kotlin.String, kotlin.String)/instrumentType">instrumentType</span><span class="symbol">:</span>&nbsp;<a href="../../com.github.widarlein.kavanza.model/-instrument-type/index.html"><span class="identifier">InstrumentType</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$getOrder(com.github.widarlein.kavanza.model.InstrumentType, kotlin.String, kotlin.String)/accountId">accountId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$getOrder(com.github.widarlein.kavanza.model.InstrumentType, kotlin.String, kotlin.String)/orderId">orderId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model.order/-order/index.html"><span class="identifier">Order</span></a><span class="symbol">&gt;</span></code>
+<p>Get a specific order</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-orderbooks.html">getOrderbooks</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOrderbooks</span><span class="symbol">(</span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$getOrderbooks(kotlin.String)/orderbookIds">orderbookIds</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-orderbook-list-item/index.html"><span class="identifier">OrderbookListItem</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Get details about one or more orderbooks</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-overview.html">getOverview</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOverview</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-overview/index.html"><span class="identifier">Overview</span></a><span class="symbol">&gt;</span></code>
+<p>Gets an overview over all accounts</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-postions.html">getPostions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPostions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-position-model/index.html"><span class="identifier">PositionModel</span></a><span class="symbol">&gt;</span></code>
+<p>Gets all current positions</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-transactions.html">getTransactions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTransactions</span><span class="symbol">(</span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$getTransactions(kotlin.String, kotlin.collections.Map((kotlin.String, )))/accountOrTransactionType">accountOrTransactionType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$getTransactions(kotlin.String, kotlin.collections.Map((kotlin.String, )))/options">options</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-transactions/index.html"><span class="identifier">Transactions</span></a><span class="symbol">&gt;</span></code>
+<p>Gets all transactions of an account</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-watchlists.html">getWatchlists</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getWatchlists</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html"><span class="identifier">List</span></a><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-watchlist/index.html"><span class="identifier">Watchlist</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Gets watchlists of account</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="login.html">login</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">login</span><span class="symbol">(</span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$login(com.github.widarlein.kavanza.model.UserCredentials)/userCredentials">userCredentials</span><span class="symbol">:</span>&nbsp;<a href="../../com.github.widarlein.kavanza.model/-user-credentials/index.html"><span class="identifier">UserCredentials</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-login-response/index.html"><span class="identifier">LoginResponse</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="place-order.html">placeOrder</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">placeOrder</span><span class="symbol">(</span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$placeOrder(com.github.widarlein.kavanza.model.order.OrderOptions)/orderOptions">orderOptions</span><span class="symbol">:</span>&nbsp;<a href="../../com.github.widarlein.kavanza.model.order/-order-options/index.html"><span class="identifier">OrderOptions</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model.order/-order-operation-response/index.html"><span class="identifier">OrderOperationResponse</span></a><span class="symbol">&gt;</span></code>
+<p>Place an order</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="remove-from-watchlist.html">removeFromWatchlist</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeFromWatchlist</span><span class="symbol">(</span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$removeFromWatchlist(kotlin.String, kotlin.String)/watchlistId">watchlistId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$removeFromWatchlist(kotlin.String, kotlin.String)/orderbookId">orderbookId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Void.html"><span class="identifier">Void</span></a><span class="symbol">&gt;</span></code>
+<p>Removes a specific orderbook (equity security: stock, certificate, etc) to a given watchlist</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="search.html">search</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">search</span><span class="symbol">(</span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$search(com.github.widarlein.kavanza.model.InstrumentType, kotlin.String, kotlin.Int)/instrumentType">instrumentType</span><span class="symbol">:</span>&nbsp;<a href="../../com.github.widarlein.kavanza.model/-instrument-type/index.html"><span class="identifier">InstrumentType</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$search(com.github.widarlein.kavanza.model.InstrumentType, kotlin.String, kotlin.Int)/searchQuery">searchQuery</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$search(com.github.widarlein.kavanza.model.InstrumentType, kotlin.String, kotlin.Int)/limit">limit</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-search-hits/index.html"><span class="identifier">SearchHits</span></a><span class="symbol">&gt;</span></code>
+<p>Free text search for an instrument</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="totp.html">totp</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">totp</span><span class="symbol">(</span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$totp(kotlin.String, com.github.widarlein.kavanza.model.TotpRequest)/cookie">cookie</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$totp(kotlin.String, com.github.widarlein.kavanza.model.TotpRequest)/totpRequest">totpRequest</span><span class="symbol">:</span>&nbsp;<a href="../../com.github.widarlein.kavanza.model/-totp-request/index.html"><span class="identifier">TotpRequest</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-totp-response/index.html"><span class="identifier">TotpResponse</span></a><span class="symbol">&gt;</span></code>
+<p>Second part of the login procedure providing the TOTP code</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

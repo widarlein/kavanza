@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AvanzaService.getTransactions - kavanza</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kavanza</a>&nbsp;/&nbsp;<a href="../index.html">com.github.widarlein.kavanza.service</a>&nbsp;/&nbsp;<a href="index.html">AvanzaService</a>&nbsp;/&nbsp;<a href="./get-transactions.html">getTransactions</a><br/>
+<br/>
+<h1>getTransactions</h1>
+<a name="com.github.widarlein.kavanza.service.AvanzaService$getTransactions(kotlin.String, kotlin.collections.Map((kotlin.String, )))"></a>
+<code><span class="identifier">@GET</span><span class="symbol">(</span>"/_mobile/account/transactions/{accountOrTransactionType}"<span class="symbol">)</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTransactions</span><span class="symbol">(</span><span class="identifier">@Path</span><span class="symbol">(</span>"accountOrTransactionType"<span class="symbol">)</span> <span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$getTransactions(kotlin.String, kotlin.collections.Map((kotlin.String, )))/accountOrTransactionType">accountOrTransactionType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier">@QueryMap</span> <span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$getTransactions(kotlin.String, kotlin.collections.Map((kotlin.String, )))/options">options</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-transactions/index.html"><span class="identifier">Transactions</span></a><span class="symbol">&gt;</span></code>
+<p>Gets all transactions of an account</p>
+<h3>Parameters</h3>
+<p><a name="accountOrTransactionType"></a>
+<code>accountOrTransactionType</code> - a valid account id or a transaction type</p>
+<p><a name="options"></a>
+<code>options</code> - a map containing all query parameter options ad in {@link com.github.widarlein.kavanza.model.TransactionOptions}</p>
+</BODY>
+</HTML>

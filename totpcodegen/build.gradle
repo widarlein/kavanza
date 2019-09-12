@@ -1,0 +1,38 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.3.50'
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+group 'com.github.widarlein'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    implementation "com.eatthepath:java-otp:0.2.0"
+    implementation "com.google.guava:guava:28.0-jre"
+}
+
+sourceSets {
+    main.java.srcDirs += 'src/main/kotlin/'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.github.widarlein.totpcodegen.MainKt'
+    }
+
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}

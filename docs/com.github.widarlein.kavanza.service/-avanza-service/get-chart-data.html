@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AvanzaService.getChartData - kavanza</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kavanza</a>&nbsp;/&nbsp;<a href="../index.html">com.github.widarlein.kavanza.service</a>&nbsp;/&nbsp;<a href="index.html">AvanzaService</a>&nbsp;/&nbsp;<a href="./get-chart-data.html">getChartData</a><br/>
+<br/>
+<h1>getChartData</h1>
+<a name="com.github.widarlein.kavanza.service.AvanzaService$getChartData(kotlin.String, com.github.widarlein.kavanza.model.Period)"></a>
+<code><span class="identifier">@GET</span><span class="symbol">(</span>"/_mobile/chart/orderbook/{orderbookId}"<span class="symbol">)</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getChartData</span><span class="symbol">(</span><span class="identifier">@Path</span><span class="symbol">(</span>"orderbookId"<span class="symbol">)</span> <span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$getChartData(kotlin.String, com.github.widarlein.kavanza.model.Period)/orderbookId">orderbookId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier">@Query</span><span class="symbol">(</span>"timePeriod"<span class="symbol">)</span> <span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$getChartData(kotlin.String, com.github.widarlein.kavanza.model.Period)/period">period</span><span class="symbol">:</span>&nbsp;<a href="../../com.github.widarlein.kavanza.model/-period/index.html"><span class="identifier">Period</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-chart-data/index.html"><span class="identifier">ChartData</span></a><span class="symbol">&gt;</span></code>
+<p>Gets prices over time for a specific orderbook</p>
+<h3>Parameters</h3>
+<p><a name="orderbookId"></a>
+<code>orderbookId</code> - the ID of the orderbook in question</p>
+<p><a name="period"></a>
+<code>period</code> - the period over which to get the price</p>
+<p><strong>Return</strong><br/>
+a call which, if successful, returns chart data</p>
+</BODY>
+</HTML>

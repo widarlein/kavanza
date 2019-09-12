@@ -1,0 +1,163 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Orderbook - kavanza</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kavanza</a>&nbsp;/&nbsp;<a href="../index.html">com.github.widarlein.kavanza.model.order</a>&nbsp;/&nbsp;<a href="./index.html">Orderbook</a><br/>
+<br/>
+<h1>Orderbook</h1>
+<code><span class="keyword">data</span> <span class="keyword">class </span><span class="identifier">Orderbook</span></code>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Orderbook</span><span class="symbol">(</span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/highestPrice">highestPrice</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/lowestPrice">lowestPrice</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/lastPrice">lastPrice</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/lastPriceUpdated">lastPriceUpdated</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/change">change</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/changePercent">changePercent</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/totalVolumeTraded">totalVolumeTraded</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/totalValueTraded">totalValueTraded</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/exchangeRate">exchangeRate</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/flagCode">flagCode</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/positionVolume">positionVolume</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/currency">currency</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/tradable">tradable</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/tickerSymbol">tickerSymbol</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/tradingUnit">tradingUnit</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="com.github.widarlein.kavanza.model.order.Orderbook$<init>(kotlin.Double, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Double, kotlin.Double, kotlin.Int, kotlin.Double, kotlin.Double, kotlin.String, kotlin.Int, kotlin.String, kotlin.String, kotlin.String, kotlin.String, kotlin.Boolean, kotlin.String, kotlin.Int, kotlin.Double)/volumeFactor">volumeFactor</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="change.html">change</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">change</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="change-percent.html">changePercent</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">changePercent</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="currency.html">currency</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">currency</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="exchange-rate.html">exchangeRate</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">exchangeRate</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="flag-code.html">flagCode</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">flagCode</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="highest-price.html">highestPrice</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">highestPrice</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="id.html">id</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">id</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="last-price.html">lastPrice</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">lastPrice</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="last-price-updated.html">lastPriceUpdated</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">lastPriceUpdated</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="lowest-price.html">lowestPrice</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">lowestPrice</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="name.html">name</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">name</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="position-volume.html">positionVolume</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">positionVolume</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="ticker-symbol.html">tickerSymbol</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">tickerSymbol</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="total-value-traded.html">totalValueTraded</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">totalValueTraded</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="total-volume-traded.html">totalVolumeTraded</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">totalVolumeTraded</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="tradable.html">tradable</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">tradable</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="trading-unit.html">tradingUnit</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">tradingUnit</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="type.html">type</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">type</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="volume-factor.html">volumeFactor</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">volumeFactor</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-double/index.html"><span class="identifier">Double</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

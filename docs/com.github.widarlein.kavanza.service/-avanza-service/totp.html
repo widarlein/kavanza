@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AvanzaService.totp - kavanza</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">kavanza</a>&nbsp;/&nbsp;<a href="../index.html">com.github.widarlein.kavanza.service</a>&nbsp;/&nbsp;<a href="index.html">AvanzaService</a>&nbsp;/&nbsp;<a href="./totp.html">totp</a><br/>
+<br/>
+<h1>totp</h1>
+<a name="com.github.widarlein.kavanza.service.AvanzaService$totp(kotlin.String, com.github.widarlein.kavanza.model.TotpRequest)"></a>
+<code><span class="identifier">@POST</span><span class="symbol">(</span>"/_api/authentication/sessions/totp"<span class="symbol">)</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">totp</span><span class="symbol">(</span><span class="identifier">@Header</span><span class="symbol">(</span>"Cookie"<span class="symbol">)</span> <span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$totp(kotlin.String, com.github.widarlein.kavanza.model.TotpRequest)/cookie">cookie</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier">@Body</span> <span class="identifier" id="com.github.widarlein.kavanza.service.AvanzaService$totp(kotlin.String, com.github.widarlein.kavanza.model.TotpRequest)/totpRequest">totpRequest</span><span class="symbol">:</span>&nbsp;<a href="../../com.github.widarlein.kavanza.model/-totp-request/index.html"><span class="identifier">TotpRequest</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Call</span><span class="symbol">&lt;</span><a href="../../com.github.widarlein.kavanza.model/-totp-response/index.html"><span class="identifier">TotpResponse</span></a><span class="symbol">&gt;</span></code>
+<p>Second part of the login procedure providing the TOTP code</p>
+<p>After login has been called it will require to send in a TOTP code generated from a pre-configured secret.
+The first login call also returns a transaction id which needs to be provided as a cookie</p>
+<h3>Parameters</h3>
+<p><a name="cookie"></a>
+<code>cookie</code> - the cookie with the transaction id. Needs to be formatted as "AZAMFATRANSACTION=%s" where %s is the id</p>
+<p><a name="totpRequest"></a>
+<code>totpRequest</code> - the model with the 2FA method (default "TOTP" which is the only supported one) and totp code</p>
+<p><strong>Return</strong><br/>
+the response if the request was successful</p>
+</BODY>
+</HTML>
