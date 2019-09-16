@@ -1,6 +1,7 @@
 # Kavanza
 A Kotlin port of the Node.js lib wrapping the unofficial Avanza API, https://github.com/fhqvst/avanza.
 As with the original this is a proof of concept, made to practice Kotlin and not for serious use.
+You can use it from Java (or any suitable JVM language with good interoperability) with Java interop making it the perfect Java Avanza API.
 
 I am not affiliated with Avanza and the API might change in any way at any time, rendering this library unusable. 
 
