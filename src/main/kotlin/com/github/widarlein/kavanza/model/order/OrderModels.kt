@@ -4,7 +4,7 @@ import com.github.widarlein.kavanza.model.AccountId
 import com.github.widarlein.kavanza.model.BrokerTradeSummary
 import com.github.widarlein.kavanza.model.LatestTrades
 
-enum class OrderType {
+enum class OrderSide {
     BUY,
     SELL
 }
@@ -26,7 +26,7 @@ data class OrderOptions(
     /**
      * Type of order, BUY or SELL
      */
-    val orderType: OrderType,
+    val side: OrderSide,
 
     /**
      * The price limit of the order
@@ -49,14 +49,31 @@ data class OrderOptions(
     /**
      * Conditions of the order..? I don't really know
      */
-    val orderCondition: String = "NORMAL"
-)
+    val condition: String = "NORMAL",
+
+    /**
+     * Avanza may have some automatic reinvestment of dividends? Idk but for normal orders, it's false.
+     */
+    val isDividendReinvestment: Boolean = false,
+
+    //val openVolume
+
+    /**
+     * The ID of the request you send as an UUID
+     */
+    val requestId: String,
+
+    /**
+     * If these options are used to modify an order, the order ID of said order needs to be set
+     */
+    val orderId: String? = null
+
+    )
 
 data class OrderOperationResponse (
-    val messages: List<String>,
+    val message: String,
     val orderId: String,
-    val requestId: String,
-    val status: String
+    val orderRequestStatus: String
 )
 
 data class Order (

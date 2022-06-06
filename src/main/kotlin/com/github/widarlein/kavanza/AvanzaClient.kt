@@ -21,18 +21,25 @@ import javax.crypto.spec.SecretKeySpec
 private const val BASE_URL = "https://www.avanza.se/"
 private const val TRANSACTION_COOKIE = "AZAMFATRANSACTION="
 
-object AvanzaClient {
+class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient {
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .client(
             OkHttpClient.Builder()
-                .addInterceptor(HeaderInterceptor)
-//                .addInterceptor(LoggingInterceptor)
+                .addInterceptor(HeaderInterceptor).also {
+                    if (debugPrintouts) {
+                        it.addInterceptor(LoggingInterceptor)
+                    }
+                }
                 .build()
         )
         .build()
+
+    init {
+
+    }
 
     private val avanzaService: AvanzaService = retrofit.create(AvanzaService::class.java)
 
@@ -74,7 +81,7 @@ object AvanzaClient {
     /**
      * Get overview of the logged in user account
      */
-    fun getOverview(): Overview {
+    override fun getOverview(): Overview {
         val response = avanzaService.getOverview().execute()
         check(response.isSuccessful) {"Overview request not successful ${response.message()} body: ${response.errorBody()}"}
         return response.body()!!
@@ -83,7 +90,7 @@ object AvanzaClient {
     /**
      * Get overview of a specific Avanza account
      */
-    fun getAccountOverview(accountId: AccountId): AccountOverview {
+    override fun getAccountOverview(accountId: AccountId): AccountOverview {
         val response = avanzaService.getAccountOverview(accountId.value).execute()
         check(response.isSuccessful) {"Account overview request not successful ${response.message()} body: ${response.errorBody()}"}
         return response.body()!!
@@ -92,7 +99,7 @@ object AvanzaClient {
     /**
      * Get the positions of the logged in user
      */
-    fun getPositions(): PositionModel {
+    override fun getPositions(): PositionModel {
         val response = avanzaService.getPostions().execute()
         check(response.isSuccessful) { "Positions request not successful ${response.message()} body: ${response.errorBody()}" }
         return response.body()!!
@@ -101,7 +108,7 @@ object AvanzaClient {
     /**
      * Get deals and recent orders made by the user
      */
-    fun getDealsAndOrders(): DealsAndOrders {
+    override fun getDealsAndOrders(): DealsAndOrders {
         val response = avanzaService.getDealsAndOrders().execute()
         check(response.isSuccessful) { "Deals and Order request not successful ${response.message()} body: ${response.errorBody()}" }
         return response.body()!!
@@ -114,7 +121,7 @@ object AvanzaClient {
      * @param transactionOptions options regarding the wanted transactions
      * @return the transactions
      */
-    fun getTransactions(accountId: AccountId, transactionOptions: TransactionOptions? = null) = getTransactions(accountId.value, transactionOptions)
+    override fun getTransactions(accountId: AccountId, transactionOptions: TransactionOptions?) = getTransactions(accountId.value, transactionOptions)
 
     /**
      * Gets all transactions of a specified type
@@ -123,7 +130,7 @@ object AvanzaClient {
      * @param transactionOptions options regarding the wanted transactions
      * @return the transactions
      */
-    fun getTransactions(transactionType: TransactionType, transactionOptions: TransactionOptions? = null) = getTransactions(transactionType.transactionType, transactionOptions)
+    override fun getTransactions(transactionType: TransactionType, transactionOptions: TransactionOptions?) = getTransactions(transactionType.transactionType, transactionOptions)
 
 
     private fun getTransactions(accountOrTransactionType: String, transactionOptions: TransactionOptions? = null): Transactions {
@@ -143,7 +150,7 @@ object AvanzaClient {
      *
      * @return the watchlists
      */
-    fun getWatchlists(): List<Watchlist> {
+    override fun getWatchlists(): List<Watchlist> {
         val response = avanzaService.getWatchlists().execute()
         check(response.isSuccessful) {"Watchlist request not successful ${response.message()} body: ${response.errorBody()}"}
         return response.body()!!
@@ -155,7 +162,7 @@ object AvanzaClient {
      * @param watchlistId the ID of the watchlist in question
      * @param orderbookId the ID of the security
      */
-    fun addToWatchlist(watchlistId: String, orderbookId: String) {
+    override fun addToWatchlist(watchlistId: String, orderbookId: String) {
         val response = avanzaService.addToWatchlist(watchlistId, orderbookId).execute()
         check(response.isSuccessful) {"Add to watchlist request not successful ${response.message()} body: ${response.errorBody()}"}
     }
@@ -166,7 +173,7 @@ object AvanzaClient {
      * @param watchlistId the ID of the watchlist in question
      * @param orderbookId the ID of the security
      */
-    fun removeFromWatchlist(watchlistId: String, orderbookId: String) {
+    override fun removeFromWatchlist(watchlistId: String, orderbookId: String) {
         val response = avanzaService.removeFromWatchlist(watchlistId, orderbookId).execute()
         check(response.isSuccessful) {"Remove from watchlist request not successful ${response.message()} body: ${response.errorBody()}"}
     }
@@ -177,7 +184,7 @@ object AvanzaClient {
      * @param orderbookIds a list of orderbook IDs
      * @return a list of orderbook overviews
      */
-    fun getOrderbooks(orderbookIds: List<String>): List<OrderbookListItem> {
+    override fun getOrderbooks(orderbookIds: List<String>): List<OrderbookListItem> {
         val response = avanzaService.getOrderbooks(orderbookIds.joinToString(",")).execute()
         check(response.isSuccessful) {"Orderbook list request not successful ${response.message()} body: ${response.errorBody()}"}
         return response.body()!!
@@ -190,7 +197,7 @@ object AvanzaClient {
      * @param period the period over which to get the price
      * @return chart data {@link com.github.widarlein.kavanza.model.ChartData}
      */
-    fun getChartData(orderbookId: String, period: Period): ChartData {
+    override fun getChartData(orderbookId: String, period: Period): ChartData {
         val response = avanzaService.getChartData(orderbookId, period).execute()
         check(response.isSuccessful) {"Chart data request not successful ${response.message()} body: ${response.errorBody()}"}
         return response.body()!!
@@ -203,20 +210,20 @@ object AvanzaClient {
      * @param instrumentId the id of the instrument in question
      * @return instrument data
      */
-    fun getInstrument(instrumentType: InstrumentType, instrumentId: String): InstrumentData {
+    override fun getInstrument(instrumentType: InstrumentType, instrumentId: String): InstrumentData {
         val response = avanzaService.getInstrument(instrumentType, instrumentId).execute()
         check(response.isSuccessful) {"Instrument details request not successful ${response.message()} body: ${response.errorBody()}"}
         return response.body()!!
     }
 
-    fun getInspirationLists(): List<InspirationList> {
+    override fun getInspirationLists(): List<InspirationList> {
         TODO("Endpoint not returning reliable data. See FIXME in related AvanzaService.kt endpoint")
         val response = avanzaService.getInspirationLists().execute()
         check(response.isSuccessful) {"Inspiration lists request not successful ${response.message()} body: ${response.errorBody()}"}
         return response.body()!!
     }
 
-    fun getInspirationLists(listType: ListType): InspirationList {
+    override fun getInspirationLists(listType: ListType): InspirationList {
         TODO("Endpoint not returning reliable data. See FIXME in related AvanzaService.kt endpoint")
         val response = avanzaService.getInspirationList(listType).execute()
         check(response.isSuccessful) {"Inspiration list request not successful ${response.message()} body: ${response.errorBody()}"}
@@ -229,7 +236,7 @@ object AvanzaClient {
      * @param orderOptions options about the order to place
      * @return a response indicating status and id of the order operation
      */
-    fun placeOrder(orderOptions: OrderOptions): OrderOperationResponse {
+    override fun placeOrder(orderOptions: OrderOptions): OrderOperationResponse {
         val response = avanzaService.placeOrder(orderOptions).execute()
         check(response.isSuccessful) {"Place order request not successful ${response.message()} body: ${response.errorBody()}"}
         return response.body()!!
@@ -243,22 +250,20 @@ object AvanzaClient {
      * @param orderId the ID of the order
      * @return the order
      */
-    fun getOrder(instrumentType: InstrumentType, accountId: AccountId, orderId: String): Order {
+    override fun getOrder(instrumentType: InstrumentType, accountId: AccountId, orderId: String): Order {
         val response = avanzaService.getOrder(instrumentType, accountId.value, orderId).execute()
         check(response.isSuccessful) {"Edit order request not successful ${response.message()} body: ${response.errorBody()}"}
         return response.body()!!
     }
 
     /**
-     * Edit an order
+     * Modify an order
      *
-     * @param instrumentType the type of the security in the order
-     * @param orderId the ID of the order
      * @param orderOptions options about the order to place
      * @return a response indicating status and id of the order operation
      */
-    fun editOrder(instrumentType: InstrumentType, orderId: String, orderOptions: OrderOptions): OrderOperationResponse {
-        val response = avanzaService.editOrder(instrumentType, orderId, orderOptions).execute()
+    override fun modifyOrder(orderOptions: OrderOptions): OrderOperationResponse {
+        val response = avanzaService.modifyOrder(orderOptions).execute()
         check(response.isSuccessful) {"Edit order request not successful ${response.message()} body: ${response.errorBody()}"}
         return response.body()!!
     }
@@ -270,7 +275,7 @@ object AvanzaClient {
      * @param orderId the ID of the order
      * @return a response indicating status and id of the order operation
      */
-    fun deleteOrder(accountId: AccountId, orderId: String): OrderOperationResponse {
+    override fun deleteOrder(accountId: AccountId, orderId: String): OrderOperationResponse {
         val response = avanzaService.deleteOrder(accountId.value, orderId).execute()
         check(response.isSuccessful) {"Delete order request not successful ${response.message()} body: ${response.errorBody()}"}
         return response.body()!!
@@ -284,7 +289,7 @@ object AvanzaClient {
      * @param instrumentType only search for instruments of this type. Defaults to NONE which searches among all types
      * @return the result of the search query
      */
-    fun search(searchQuery: String, instrumentType: InstrumentType = InstrumentType.NONE): SearchHits {
+    override fun search(searchQuery: String, instrumentType: InstrumentType): SearchHits {
         val response = avanzaService.search(instrumentType, searchQuery, 100).execute()
         check(response.isSuccessful) {"Search request not successful ${response.message()} body: ${response.errorBody()}"}
         return response.body()!!
