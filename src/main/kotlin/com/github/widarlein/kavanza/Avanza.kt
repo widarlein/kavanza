@@ -10,5 +10,6 @@ object Avanza {
      * @param totpSecret the secret earlier established in Avanza settings for 2FA
      * @return the Avanza client
      */
-    fun connect(userCredentials: UserCredentials, totpSecret: String): AvanzaClient = AvanzaClient.also { it.login(userCredentials, totpSecret) }
+    fun connect(userCredentials: UserCredentials, totpSecret: String, debugPrintouts: Boolean = false): AvanzaClient =
+        AvanzaClient(debugPrintouts).also { it.login(userCredentials, totpSecret) }
 }

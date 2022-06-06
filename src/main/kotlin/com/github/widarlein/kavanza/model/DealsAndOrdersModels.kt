@@ -4,7 +4,7 @@ data class DealsAndOrders (
     val orders : List<Order>,
     val deals : List<String>,
     val accounts : List<DealAccount>,
-    val reservedAmount : Int
+    val reservedAmount : Double
 )
 
 data class Order (
@@ -16,9 +16,9 @@ data class Order (
     val rawStatus : String,
     val visibleOnAccountDate : String,
     val type : String,
-    val sum : Int,
-    val orderId : Int,
-    val price : Int,
+    val sum : Double,
+    val orderId : String,
+    val price : Double,
     val modifyAllowed : Boolean,
     val deletable : Boolean,
     val orderDateTime : String
@@ -26,17 +26,17 @@ data class Order (
 
 data class DealAccount (
     val type : String,
-    val name : Int,
-    val id : Int
+    val name : String,
+    val id : String
 )
 
 data class TransactionFees (
-    val commission : Int,
-    val marketFees : Int,
+    val commission : Double,
+    val marketFees : Double,
     val fundOrderFee : FundOrderFee,
-    val totalFees : Int,
-    val totalSum : Int,
-    val totalSumWithoutFees : Int
+    val totalFees : Double,
+    val totalSum : Double,
+    val totalSumWithoutFees : Double
 )
 
 data class Orderbook (
@@ -48,12 +48,12 @@ data class Orderbook (
 )
 
 data class FundOrderFee (
-    val rate : Int,
-    val sum : Int
+    val rate : Double,
+    val sum : Double
 )
 
 data class OrderAccount (
     val type : String,
-    val name : Int,
-    val id : Int
+    val name : String,
+    val id : String
 )
