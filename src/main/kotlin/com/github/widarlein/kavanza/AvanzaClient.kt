@@ -197,10 +197,9 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      * @param period the period over which to get the price
      * @return chart data {@link com.github.widarlein.kavanza.model.ChartData}
      */
+    @Deprecated("Endpoint changed in the app and this has not yet been migrated. Do not use")
     override fun getChartData(orderbookId: String, period: Period): ChartData {
-        val response = avanzaService.getChartData(orderbookId, period).execute()
-        check(response.isSuccessful) {"Chart data request not successful ${response.message()} body: ${response.errorBody()}"}
-        return response.body()!!
+        throw NotImplementedError()
     }
 
     /**
@@ -210,12 +209,12 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      * @param instrumentId the id of the instrument in question
      * @return instrument data
      */
+    @Deprecated("Endpoint changed in the app and this has not yet been migrated. Do not use")
     override fun getInstrument(instrumentType: InstrumentType, instrumentId: String): InstrumentData {
-        val response = avanzaService.getInstrument(instrumentType, instrumentId).execute()
-        check(response.isSuccessful) {"Instrument details request not successful ${response.message()} body: ${response.errorBody()}"}
-        return response.body()!!
+        throw NotImplementedError()
     }
 
+    @Deprecated("Needs to be properly fixed with a custom deserializer")
     override fun getInspirationLists(): List<InspirationList> {
         TODO("Endpoint not returning reliable data. See FIXME in related AvanzaService.kt endpoint")
         val response = avanzaService.getInspirationLists().execute()
@@ -223,6 +222,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
         return response.body()!!
     }
 
+    @Deprecated("Needs to be properly fixed with a custom deserializer")
     override fun getInspirationLists(listType: ListType): InspirationList {
         TODO("Endpoint not returning reliable data. See FIXME in related AvanzaService.kt endpoint")
         val response = avanzaService.getInspirationList(listType).execute()
@@ -250,6 +250,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      * @param orderId the ID of the order
      * @return the order
      */
+    @Deprecated("Doesn't work, don't know the replacement")
     override fun getOrder(instrumentType: InstrumentType, accountId: AccountId, orderId: String): Order {
         val response = avanzaService.getOrder(instrumentType, accountId.value, orderId).execute()
         check(response.isSuccessful) {"Edit order request not successful ${response.message()} body: ${response.errorBody()}"}

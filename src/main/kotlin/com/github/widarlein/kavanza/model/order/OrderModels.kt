@@ -56,8 +56,6 @@ data class OrderOptions(
      */
     val isDividendReinvestment: Boolean = false,
 
-    //val openVolume
-
     /**
      * The ID of the request you send as an UUID
      */
@@ -67,6 +65,9 @@ data class OrderOptions(
      * If these options are used to modify an order, the order ID of said order needs to be set
      */
     val orderId: String? = null
+
+    //TODO: val metadata?
+    //val openVolume ?
 
     )
 

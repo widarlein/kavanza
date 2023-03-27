@@ -134,7 +134,7 @@ interface AvanzaService {
      *
      * @param orderOptions options about the order to place
      */
-    @POST("/_cqbe/trading/order/new")
+    @POST("/_api/trading-critical/rest/order/new")
     fun placeOrder(@Body orderOptions: OrderOptions): Call<OrderOperationResponse>
 
     /**
@@ -145,6 +145,7 @@ interface AvanzaService {
      * @param orderId the ID of the order
      * @return a call with the order as body
      */
+    @Deprecated("Doesn't work, don't know the replacement")
     @GET("/_mobile/order/{instrumentType}")
     fun getOrder(
         @Path("instrumentType") instrumentType: InstrumentType,
@@ -157,7 +158,7 @@ interface AvanzaService {
      *
      * @param orderOptions Same kind of options as when placing an order, but make sure to set orderId
      */
-    @POST("/_cqbe/trading/order/modify")
+    @POST("/_api/trading-critical/rest/order/modify")
     fun modifyOrder(@Body orderOptions: OrderOptions): Call<OrderOperationResponse>
 
     //same deleteOrder still!

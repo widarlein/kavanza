@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>IAvanzaClient</title>
+    <link href="../../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../../";</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="../../../scripts/sourceset_dependencies.js" async="async"></script>
+<link href="../../../styles/style.css" rel="Stylesheet">
+<link href="../../../styles/jetbrains-mono.css" rel="Stylesheet">
+<link href="../../../styles/main.css" rel="Stylesheet">
+<link href="../../../styles/prism.css" rel="Stylesheet">
+<link href="../../../styles/logo-styles.css" rel="Stylesheet">
+<script type="text/javascript" src="../../../scripts/clipboard.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/navigation-loader.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/platform-content-handler.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/main.js" defer="defer"></script>
+<script type="text/javascript" src="../../../scripts/prism.js" async="async"></script>
+<script type="text/javascript" src="../../../scripts/symbol-parameters-wrapper_deferred.js" defer="defer"></script>
+</head>
+<body>
+<div class="navigation-wrapper" id="navigation-wrapper">
+    <div id="leftToggler"><span class="icon-toggler"></span></div>
+    <div class="library-name">
+            <a href="../../../index.html">
+                    <span>kavanza</span>
+            </a>
+    </div>
+    <div>
+2.0    </div>
+    <div class="pull-right d-flex">
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":dokkaHtml/main">jvm</button>
+        </div>
+        <button id="theme-toggle-button"><span id="theme-toggle"></span></button>
+        <div id="searchBar"></div>
+    </div>
+</div>
+<div id="container">
+    <div id="leftColumn">
+        <div id="sideMenu"></div>
+    </div>
+    <div id="main">
+<div class="main-content" data-page-type="classlike" id="content" pageIds="kavanza::com.github.widarlein.kavanza/IAvanzaClient///PointingToDeclaration//769193423">
+  <div class="breadcrumbs"><a href="../../../index.html">kavanza</a><span class="delimiter">/</span><a href="../index.html">com.github.widarlein.kavanza</a><span class="delimiter">/</span><span class="current">IAvanzaClient</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span>IAvanza</span><wbr></wbr><span><span>Client</span></span></h1>
+    <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="index.html">IAvanzaClient</a></div><h4 class="">Inheritors</h4><div class="table"><div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main"><div class="main-subrow keyValue "><div class=""><span class="inline-flex"><div><a href="../-avanza-client/index.html">AvanzaClient</a></div></span></div><div></div></div></div></div></div></div>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="CONSTRUCTOR,TYPE,FUNCTION,PROPERTY">Members</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="FUNCTION">
+        <h2 class="">Functions</h2>
+        <div class="table"><a data-name="95737269%2FFunctions%2F769193423" anchor-label="addToWatchlist" id="95737269%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="add-to-watchlist.html"><span>add</span><wbr></wbr><span>To</span><wbr></wbr><span><span>Watchlist</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="95737269%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="add-to-watchlist.html"><span class="token function">addToWatchlist</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">watchlistId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">orderbookId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Adds a specific orderbook (equity security: stock, certificate, etc) to a given watchlist</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="698266809%2FFunctions%2F769193423" anchor-label="deleteOrder" id="698266809%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="delete-order.html"><span>delete</span><wbr></wbr><span><span>Order</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="698266809%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="delete-order.html"><span class="token function">deleteOrder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accountId<span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-account-id/index.html">AccountId</a><span class="token punctuation">, </span></span><span class="parameter ">orderId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model.order/-order-operation-response/index.html">OrderOperationResponse</a></div><div class="brief "><p class="paragraph">Delete an order</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1024505367%2FFunctions%2F769193423" anchor-label="getAccountOverview" id="1024505367%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-account-overview.html"><span>get</span><wbr></wbr><span>Account</span><wbr></wbr><span><span>Overview</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1024505367%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-account-overview.html"><span class="token function">getAccountOverview</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accountId<span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-account-id/index.html">AccountId</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-account-overview/index.html">AccountOverview</a></div><div class="brief "><p class="paragraph">Get overview of a specific Avanza account</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1206652233%2FFunctions%2F769193423" anchor-label="getChartData" id="1206652233%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-chart-data.html"><span>get</span><wbr></wbr><span>Chart</span><wbr></wbr><span><span>Data</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1206652233%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-chart-data.html"><span class="token function">getChartData</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">orderbookId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">period<span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-period/index.html">Period</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-chart-data/index.html">ChartData</a></div><div class="brief "><p class="paragraph">Gets prices over time for a specific orderbook</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1402796074%2FFunctions%2F769193423" anchor-label="getDealsAndOrders" id="1402796074%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-deals-and-orders.html"><span>get</span><wbr></wbr><span>Deals</span><wbr></wbr><span>And</span><wbr></wbr><span><span>Orders</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1402796074%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-deals-and-orders.html"><span class="token function">getDealsAndOrders</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-deals-and-orders/index.html">DealsAndOrders</a></div><div class="brief "><p class="paragraph">Get deals and recent orders made by the user</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1252130708%2FFunctions%2F769193423" anchor-label="getInspirationLists" id="1252130708%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-inspiration-lists.html"><span>get</span><wbr></wbr><span>Inspiration</span><wbr></wbr><span><span>Lists</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1252130708%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-inspiration-lists.html"><span class="token function">getInspirationLists</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.github.widarlein.kavanza.model/-inspiration-list/index.html">InspirationList</a><span class="token operator">&gt;</span></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-inspiration-lists.html"><span class="token function">getInspirationLists</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">listType<span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-list-type/index.html">ListType</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-inspiration-list/index.html">InspirationList</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1720324548%2FFunctions%2F769193423" anchor-label="getInstrument" id="1720324548%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-instrument.html"><span>get</span><wbr></wbr><span><span>Instrument</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1720324548%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-instrument.html"><span class="token function">getInstrument</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">instrumentType<span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-instrument-type/index.html">InstrumentType</a><span class="token punctuation">, </span></span><span class="parameter ">instrumentId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-instrument-data/index.html">InstrumentData</a></div><div class="brief "><p class="paragraph">Gets details about a specified instrument</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="899840348%2FFunctions%2F769193423" anchor-label="getOrder" id="899840348%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-order.html"><span>get</span><wbr></wbr><span><span>Order</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="899840348%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-order.html"><span class="token function">getOrder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">instrumentType<span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-instrument-type/index.html">InstrumentType</a><span class="token punctuation">, </span></span><span class="parameter ">accountId<span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-account-id/index.html">AccountId</a><span class="token punctuation">, </span></span><span class="parameter ">orderId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model.order/-order/index.html">Order</a></div><div class="brief "><p class="paragraph">Get a specific order</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1742708301%2FFunctions%2F769193423" anchor-label="getOrderbooks" id="1742708301%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-orderbooks.html"><span>get</span><wbr></wbr><span><span>Orderbooks</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1742708301%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-orderbooks.html"><span class="token function">getOrderbooks</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">orderbookIds<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token operator">&gt;</span></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.github.widarlein.kavanza.model/-orderbook-list-item/index.html">OrderbookListItem</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Get details about one or more orderbooks</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-518492538%2FFunctions%2F769193423" anchor-label="getOverview" id="-518492538%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-overview.html"><span>get</span><wbr></wbr><span><span>Overview</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-518492538%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-overview.html"><span class="token function">getOverview</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-overview/index.html">Overview</a></div><div class="brief "><p class="paragraph">Get overview of the logged in user account</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2064254799%2FFunctions%2F769193423" anchor-label="getPositions" id="-2064254799%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-positions.html"><span>get</span><wbr></wbr><span><span>Positions</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2064254799%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-positions.html"><span class="token function">getPositions</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-position-model/index.html">PositionModel</a></div><div class="brief "><p class="paragraph">Get the positions of the logged in user</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-928042816%2FFunctions%2F769193423" anchor-label="getTransactions" id="-928042816%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-transactions.html"><span>get</span><wbr></wbr><span><span>Transactions</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-928042816%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-transactions.html"><span class="token function">getTransactions</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">accountId<span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-account-id/index.html">AccountId</a><span class="token punctuation">, </span></span><span class="parameter ">transactionOptions<span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-transaction-options/index.html">TransactionOptions</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-transactions/index.html">Transactions</a></div><div class="brief "><p class="paragraph">Gets all transactions of a specified account</p></div><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-transactions.html"><span class="token function">getTransactions</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">transactionType<span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-transaction-type/index.html">TransactionType</a><span class="token punctuation">, </span></span><span class="parameter ">transactionOptions<span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-transaction-options/index.html">TransactionOptions</a><span class="token operator">?</span><span class="token operator"> = </span>null</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-transactions/index.html">Transactions</a></div><div class="brief "><p class="paragraph">Gets all transactions of a specified type</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="950960121%2FFunctions%2F769193423" anchor-label="getWatchlists" id="950960121%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="get-watchlists.html"><span>get</span><wbr></wbr><span><span>Watchlists</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="950960121%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="get-watchlists.html"><span class="token function">getWatchlists</span></a><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-list/index.html">List</a><span class="token operator">&lt;</span><span class="token keyword"></span><a href="../../com.github.widarlein.kavanza.model/-watchlist/index.html">Watchlist</a><span class="token operator">&gt;</span></div><div class="brief "><p class="paragraph">Gets all watchlists</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1142316295%2FFunctions%2F769193423" anchor-label="modifyOrder" id="1142316295%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="modify-order.html"><span>modify</span><wbr></wbr><span><span>Order</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1142316295%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="modify-order.html"><span class="token function">modifyOrder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">orderOptions<span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model.order/-order-options/index.html">OrderOptions</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model.order/-order-operation-response/index.html">OrderOperationResponse</a></div><div class="brief "><p class="paragraph">Modify an order</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1456586166%2FFunctions%2F769193423" anchor-label="placeOrder" id="-1456586166%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="place-order.html"><span>place</span><wbr></wbr><span><span>Order</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1456586166%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="place-order.html"><span class="token function">placeOrder</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">orderOptions<span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model.order/-order-options/index.html">OrderOptions</a></span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model.order/-order-operation-response/index.html">OrderOperationResponse</a></div><div class="brief "><p class="paragraph">Place an order</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="700864755%2FFunctions%2F769193423" anchor-label="removeFromWatchlist" id="700864755%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="remove-from-watchlist.html"><span>remove</span><wbr></wbr><span>From</span><wbr></wbr><span><span>Watchlist</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="700864755%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="remove-from-watchlist.html"><span class="token function">removeFromWatchlist</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">watchlistId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">orderbookId<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a></span></span><span class="token punctuation">)</span></div><div class="brief "><p class="paragraph">Removes a specific orderbook (equity security: stock, certificate, etc) to a given watchlist</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2024564223%2FFunctions%2F769193423" anchor-label="search" id="2024564223%2FFunctions%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="search.html"><span><span>search</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2024564223%2FFunctions%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword"></span><span class="token keyword">fun </span><a href="search.html"><span class="token function">search</span></a><span class="token punctuation">(</span><span class="parameters "><span class="parameter ">searchQuery<span class="token operator">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a><span class="token punctuation">, </span></span><span class="parameter ">instrumentType<span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-instrument-type/index.html">InstrumentType</a><span class="token operator"> = </span>InstrumentType.NONE</span></span><span class="token punctuation">)</span><span class="token operator">: </span><a href="../../com.github.widarlein.kavanza.model/-search-hits/index.html">SearchHits</a></div><div class="brief "><p class="paragraph">Free text search for an instrument</p></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2023 Copyright</span><span
+                class="pull-right"><span>Generated by </span><a
+                href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,2 +1,3 @@
 rootProject.name = 'kavanza'
+include 'TestingModule'
 

@@ -1,7 +1,0 @@
-$dokka.format:html
-$dokka.linkExtension:html
-$dokka.location:com.github.widarlein.kavanza.service$bodyToString(okhttp3.Request)com.github.widarlein.kavanza.service/okhttp3.-request/body-to-string.html
-com.github.widarlein.kavanza
-com.github.widarlein.kavanza.model
-com.github.widarlein.kavanza.model.order
-com.github.widarlein.kavanza.service

@@ -5,6 +5,18 @@ You can use it from Java (or any suitable JVM language with good interoperabilit
 
 I am not affiliated with Avanza and the API might change in any way at any time, rendering this library unusable. 
 
+## V2 Changes
+The API has changed a bit and there has been some code changes to accommodate this, but the fixes are not complete 
+and some methods have been deprecated for later consideration and some have been indefinitely deprecated.
+
+### In progress
+- [ ] `getChartData`
+- [ ] `getInstrument`
+- [ ] `getInspirationLists`
+
+### Permanently gone (or until I get a tip on how to implement it)
+- [ ] `getOrder` (you can still get all orders through `getDealsAndOrders`)
+
 ## TOTP Secret
 In order to log in to Avanza, you need to enable two-factor authentication and establish a TOTP secret.
 
