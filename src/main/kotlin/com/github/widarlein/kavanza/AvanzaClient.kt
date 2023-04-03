@@ -190,6 +190,12 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
         return response.body()!!
     }
 
+    override fun getMarketGuideStock(orderbookId: String): MarketGuideStock {
+        val response = avanzaService.getMarketGuideStock(orderbookId).execute()
+        check(response.isSuccessful) {"Market guide stock request not successful ${response.message()} body: ${response.errorBody()}"}
+        return response.body()!!
+    }
+
     /**
      * Gets prices over time for a specific orderbook
      *

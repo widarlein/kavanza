@@ -76,6 +76,15 @@ interface IAvanzaClient {
     fun getOrderbooks(orderbookIds: List<String>): List<OrderbookListItem>
 
     /**
+     * Get details about one orderbook in the form of market guide. Data that is loaded when you visit the page
+     * https://www.avanza.se/aktier/om-aktien.html/5247/investor-b on web
+     *
+     * @param orderbookId an orderbooks
+     * @return returns market guide stock
+     */
+    fun getMarketGuideStock(orderbookId: String): MarketGuideStock
+
+    /**
      * Gets prices over time for a specific orderbook
      *
      * @param orderbookId the ID of the orderbook in question

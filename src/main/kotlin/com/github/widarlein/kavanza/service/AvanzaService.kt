@@ -90,6 +90,16 @@ interface AvanzaService {
     fun getOrderbooks(@Path("orderbookIds") orderbookIds: String): Call<List<OrderbookListItem>>
 
     /**
+     * Get details about one orderbook in the form of market guide. Data that is loaded when you visit the page
+     * https://www.avanza.se/aktier/om-aktien.html/5247/investor-b on web
+     *
+     * @param orderbookId an orderbooks
+     * @return a call which, if successful, returns market guide stock
+     */
+    @GET("https://www.avanza.se/_api/market-guide/stock/{orderbookId}")
+    fun getMarketGuideStock(@Path("orderbookId") orderbookId: String): Call<MarketGuideStock>
+
+    /**
      * Gets prices over time for a specific orderbook
      *
      * @param orderbookId the ID of the orderbook in question
