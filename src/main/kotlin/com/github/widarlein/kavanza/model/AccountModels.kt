@@ -80,8 +80,12 @@ data class AccountOverview(
     val ownCapital: Double,
     val numberOfTransfers: Long,
     val numberOfIntradayTransfers: Long,
+
+    /* TODO These are "temporarily" out commented because the API is returning "NaN" as a string value on certain accounts
+        and I don't have the time right now to accommodate for that
     val standardDeviation: Double,
     val sharpeRatio: Double
+    */
 )
 
 data class CurrencyAccount(val currency: String, val balance: Double)
