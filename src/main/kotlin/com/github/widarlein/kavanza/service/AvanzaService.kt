@@ -106,8 +106,19 @@ interface AvanzaService {
      * @param period the period over which to get the price
      * @return a call which, if successful, returns chart data
      */
+    @Deprecated("Doesn't work anymore. Look at getPriceChart instead")
     @GET("/_mobile/chart/orderbook/{orderbookId}")
     fun getChartData(@Path("orderbookId") orderbookId: String, @Query("timePeriod") period: Period): Call<ChartData>
+
+    /**
+     * Gets prices over time for a specific stock and only stock.
+     *
+     * @param orderbookId the ID of the stock in question
+     * @param period the period over which to get the price
+     * @return a call which, if successful, returns chart data
+     */
+    @GET("_api/price-chart/stock/{orderbookId}")
+    fun getStockPriceChart(@Path("orderbookId") orderbookId: String, @Query("timePeriod") period: TimePeriod): Call<PriceChart>
 
     /**
      * Gets details about a specified instrument

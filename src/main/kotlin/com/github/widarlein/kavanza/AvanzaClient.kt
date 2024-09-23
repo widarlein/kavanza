@@ -168,7 +168,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
     }
 
     /**
-     * Removes a specific orderbook (equity security: stock, certificate, etc) to a given watchlist
+     * Removes a specific orderbook (equity security: stock, certificate, etc) from a given watchlist
      *
      * @param watchlistId the ID of the watchlist in question
      * @param orderbookId the ID of the security
@@ -201,11 +201,12 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      *
      * @param orderbookId the ID of the orderbook in question
      * @param period the period over which to get the price
-     * @return chart data {@link com.github.widarlein.kavanza.model.ChartData}
+     * @return chart data {@link com.github.widarlein.kavanza.model.PriceChart}
      */
-    @Deprecated("Endpoint changed in the app and this has not yet been migrated. Do not use")
-    override fun getChartData(orderbookId: String, period: Period): ChartData {
-        throw NotImplementedError()
+    override fun getStockPriceChart(orderbookId: String, period: TimePeriod): PriceChart {
+        val response = avanzaService.getStockPriceChart(orderbookId, period).execute()
+        check(response.isSuccessful) {"Stock price chart request not successful ${response.message()} body: ${response.errorBody()}"}
+        return response.body()!!
     }
 
     /**

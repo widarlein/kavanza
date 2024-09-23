@@ -85,15 +85,6 @@ interface IAvanzaClient {
     fun getMarketGuideStock(orderbookId: String): MarketGuideStock
 
     /**
-     * Gets prices over time for a specific orderbook
-     *
-     * @param orderbookId the ID of the orderbook in question
-     * @param period the period over which to get the price
-     * @return chart data {@link com.github.widarlein.kavanza.model.ChartData}
-     */
-    fun getChartData(orderbookId: String, period: Period): ChartData
-
-    /**
      * Gets details about a specified instrument
      *
      * @param instrumentType the type of instrument wanted
@@ -147,4 +138,13 @@ interface IAvanzaClient {
      * @return a response indicating status and id of the order operation
      */
     fun modifyOrder(orderOptions: OrderOptions): OrderOperationResponse
+
+    /**
+     * Gets prices over time for a specific stock and only stock
+     *
+     * @param orderbookId the ID of the stock in question
+     * @param period the period over which to get the price
+     * @return chart data {@link com.github.widarlein.kavanza.model.PriceChart}
+     */
+    fun getStockPriceChart(orderbookId: String, period: TimePeriod): PriceChart
 }

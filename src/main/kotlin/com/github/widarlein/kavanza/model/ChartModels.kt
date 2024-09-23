@@ -13,6 +13,7 @@ enum class Period {
 }
 
 //TODO check suspicios floor and ceiling, but it's probably right
+@Deprecated("Endpoint using this is deprecated. Look at PriceChart instead")
 data class ChartData (
     val dataSeries : List<ChartDataPoint>,
     val comparisonSeries : List<ChartDataPoint>,
