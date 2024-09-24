@@ -4,6 +4,7 @@ import com.github.widarlein.kavanza.model.*
 import com.github.widarlein.kavanza.model.order.Order
 import com.github.widarlein.kavanza.model.order.OrderOperationResponse
 import com.github.widarlein.kavanza.model.order.OrderOptions
+import com.github.widarlein.kavanza.model.positions.Positions
 
 interface IAvanzaClient {
     /**
@@ -12,14 +13,14 @@ interface IAvanzaClient {
     fun getOverview(): Overview
 
     /**
-     * Get overview of a specific Avanza account
+     * Get an overview of categories and accounts
      */
-    fun getAccountOverview(accountId: AccountId): AccountOverview
+    fun getCategorizedAccountsOverview(): CategorizedAccountsOverview
 
     /**
      * Get the positions of the logged in user
      */
-    fun getPositions(): PositionModel
+    fun getPositions(): Positions
 
     /**
      * Get deals and recent orders made by the user

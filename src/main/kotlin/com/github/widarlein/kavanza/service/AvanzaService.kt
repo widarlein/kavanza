@@ -1,6 +1,7 @@
 package com.github.widarlein.kavanza.service
 
 import com.github.widarlein.kavanza.model.*
+import com.github.widarlein.kavanza.model.positions.Positions
 import com.github.widarlein.kavanza.model.order.Order
 import com.github.widarlein.kavanza.model.order.OrderOptions
 import com.github.widarlein.kavanza.model.order.OrderOperationResponse
@@ -32,19 +33,14 @@ interface AvanzaService {
     @GET("/_mobile/account/overview")
     fun getOverview(): Call<Overview>
 
-    /**
-     * Gets an overview over a specific account
-     *
-     * @param accountId a valid ID of an account
-     */
-    @GET("/_mobile/account/{accountId}/overview")
-    fun getAccountOverview(@Path("accountId") accountId: String): Call<AccountOverview>
+    @GET("/_api/account-overview/overview/categorizedAccounts")
+    fun getCategorizedAccountsOverview(): Call<CategorizedAccountsOverview>
 
     /**
      * Gets all current positions
      */
-    @GET("/_mobile/account/positions")
-    fun getPostions(): Call<PositionModel>
+    @GET("/_api/position-data/positions")
+    fun getPostions(): Call<Positions>
 
     /**
      * Gets all current deals and orders

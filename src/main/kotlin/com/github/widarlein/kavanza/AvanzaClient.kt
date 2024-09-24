@@ -2,6 +2,7 @@ package com.github.widarlein.kavanza
 
 import com.eatthepath.otp.TimeBasedOneTimePasswordGenerator
 import com.github.widarlein.kavanza.model.*
+import com.github.widarlein.kavanza.model.positions.Positions
 import com.github.widarlein.kavanza.model.order.Order
 import com.github.widarlein.kavanza.model.order.OrderOptions
 import com.github.widarlein.kavanza.model.order.OrderOperationResponse
@@ -87,19 +88,17 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
         return response.body()!!
     }
 
-    /**
-     * Get overview of a specific Avanza account
-     */
-    override fun getAccountOverview(accountId: AccountId): AccountOverview {
-        val response = avanzaService.getAccountOverview(accountId.value).execute()
-        check(response.isSuccessful) {"Account overview request not successful ${response.message()} body: ${response.errorBody()}"}
+
+    override fun getCategorizedAccountsOverview(): CategorizedAccountsOverview {
+        val response = avanzaService.getCategorizedAccountsOverview().execute()
+        check(response.isSuccessful) {"Categorized accounts overview request not successful ${response.message()} body: ${response.errorBody()}"}
         return response.body()!!
     }
 
     /**
      * Get the positions of the logged in user
      */
-    override fun getPositions(): PositionModel {
+    override fun getPositions(): Positions {
         val response = avanzaService.getPostions().execute()
         check(response.isSuccessful) { "Positions request not successful ${response.message()} body: ${response.errorBody()}" }
         return response.body()!!

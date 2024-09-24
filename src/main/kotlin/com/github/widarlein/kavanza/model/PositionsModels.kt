@@ -1,23 +1,7 @@
 package com.github.widarlein.kavanza.model
 
-data class PositionModel (
-    val instrumentPositions : List<InstrumentPositions>,
-    val totalBalance : Double,
-    val totalProfitPercent : Double,
-    val totalBuyingPower : Double,
-    val totalOwnCapital : Double,
-    val totalProfit : Double
-)
 
-data class InstrumentPositions (
-    val instrumentType : String,
-    val positions : List<Positions>,
-    val totalValue : Double,
-    val totalProfitValue : Double,
-    val totalProfitPercent : Double,
-    val todaysProfitPercent : Double
-)
-
+// This remained after cleanup and is used in InstrumentModels.kt. Want to remove but a bit unclear if it is still relevant
 data class Positions (
     val accountName : String,
     val accountType : String,
