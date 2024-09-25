@@ -2,6 +2,8 @@ package com.github.widarlein.kavanza
 
 import com.eatthepath.otp.TimeBasedOneTimePasswordGenerator
 import com.github.widarlein.kavanza.model.*
+import com.github.widarlein.kavanza.model.getorders.GetOrdersResponse
+import com.github.widarlein.kavanza.model.order.DeleteOrderOperation
 import com.github.widarlein.kavanza.model.positions.Positions
 import com.github.widarlein.kavanza.model.order.Order
 import com.github.widarlein.kavanza.model.order.OrderOptions
@@ -101,15 +103,6 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
     override fun getPositions(): Positions {
         val response = avanzaService.getPostions().execute()
         check(response.isSuccessful) { "Positions request not successful ${response.message()} body: ${response.errorBody()}" }
-        return response.body()!!
-    }
-
-    /**
-     * Get deals and recent orders made by the user
-     */
-    override fun getDealsAndOrders(): DealsAndOrders {
-        val response = avanzaService.getDealsAndOrders().execute()
-        check(response.isSuccessful) { "Deals and Order request not successful ${response.message()} body: ${response.errorBody()}" }
         return response.body()!!
     }
 
@@ -249,6 +242,17 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
     }
 
     /**
+     * Gets all orders of the logged in user
+     *
+     * @return a response containing the list of orders
+     */
+    override fun getOrders(): GetOrdersResponse {
+        val response = avanzaService.getOrders().execute()
+        check(response.isSuccessful) {"Get orders request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
+        return response.body()!!
+    }
+
+    /**
      * Get a specific order
      *
      * @param instrumentType the type of the security in the order
@@ -283,7 +287,12 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      * @return a response indicating status and id of the order operation
      */
     override fun deleteOrder(accountId: AccountId, orderId: String): OrderOperationResponse {
-        val response = avanzaService.deleteOrder(accountId.value, orderId).execute()
+        val response = avanzaService.deleteOrder(
+            DeleteOrderOperation(
+                accountId = accountId,
+                orderId = orderId,
+            )
+        ).execute()
         check(response.isSuccessful) {"Delete order request not successful ${response.message()} body: ${response.errorBody()}"}
         return response.body()!!
     }

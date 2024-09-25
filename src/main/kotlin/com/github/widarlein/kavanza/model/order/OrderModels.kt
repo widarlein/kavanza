@@ -71,9 +71,25 @@ data class OrderOptions(
 
     )
 
+data class DeleteOrderOperation(
+    /**
+     * The ID of the account the order should be placed on
+     */
+    val accountId: AccountId,
+
+    /**
+     * The id of the order to delete
+     */
+    val orderId: String
+)
+
 data class OrderOperationResponse (
     val message: String,
     val orderId: String,
+
+    /**
+     * ERROR or SUCCESS
+     */
     val orderRequestStatus: String
 )
 
@@ -144,3 +160,4 @@ data class TickSizeRules (
     val maxPrice: Double,
     val tickSize: Double
 )
+

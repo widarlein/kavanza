@@ -1,6 +1,7 @@
 package com.github.widarlein.kavanza
 
 import com.github.widarlein.kavanza.model.*
+import com.github.widarlein.kavanza.model.getorders.GetOrdersResponse
 import com.github.widarlein.kavanza.model.order.Order
 import com.github.widarlein.kavanza.model.order.OrderOperationResponse
 import com.github.widarlein.kavanza.model.order.OrderOptions
@@ -23,9 +24,11 @@ interface IAvanzaClient {
     fun getPositions(): Positions
 
     /**
-     * Get deals and recent orders made by the user
+     * Gets all orders of the logged in user
+     *
+     * @return a response containing the list of orders
      */
-    fun getDealsAndOrders(): DealsAndOrders
+    fun getOrders(): GetOrdersResponse
 
     /**
      * Gets all transactions of a specified account

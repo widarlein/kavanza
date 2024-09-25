@@ -1,6 +1,8 @@
 package com.github.widarlein.kavanza.service
 
 import com.github.widarlein.kavanza.model.*
+import com.github.widarlein.kavanza.model.getorders.GetOrdersResponse
+import com.github.widarlein.kavanza.model.order.DeleteOrderOperation
 import com.github.widarlein.kavanza.model.positions.Positions
 import com.github.widarlein.kavanza.model.order.Order
 import com.github.widarlein.kavanza.model.order.OrderOptions
@@ -43,11 +45,10 @@ interface AvanzaService {
     fun getPostions(): Call<Positions>
 
     /**
-     * Gets all current deals and orders
+     * Gets all orders of the logged in user
      */
-    //TODO Do this request with deals and orders ongoing and see if the models are correct
-    @GET("/_mobile/account/dealsandorders")
-    fun getDealsAndOrders(): Call<DealsAndOrders>
+    @GET("/_api/trading/rest/orders")
+    fun getOrders(): Call<GetOrdersResponse>
 
     /**
      * Gets all transactions of an account
@@ -178,15 +179,15 @@ interface AvanzaService {
     @POST("/_api/trading-critical/rest/order/modify")
     fun modifyOrder(@Body orderOptions: OrderOptions): Call<OrderOperationResponse>
 
-    //same deleteOrder still!
+
     /**
      * Delete an order
      *
      * @param accountId the ID of the account of the order
      * @param orderId the ID of the order
      */
-    @DELETE("/_api/order")
-    fun deleteOrder(@Query("accountId") accountId: String, @Query("orderId") orderId: String): Call<OrderOperationResponse>
+    @POST("/_api/trading-critical/rest/order/delete")
+    fun deleteOrder(@Body orderOptions: DeleteOrderOperation): Call<OrderOperationResponse>
 
     /**
      * Free text search for an instrument
