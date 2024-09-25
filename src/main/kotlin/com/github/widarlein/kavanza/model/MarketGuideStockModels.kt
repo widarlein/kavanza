@@ -169,16 +169,24 @@ data class Listing(
 )
 
 data class Quote(
+    @SerializedName("buy")
+    val buy: Double,
     @SerializedName("change")
     val change: Double,
     @SerializedName("changePercent")
     val changePercent: Double,
     @SerializedName("highest")
     val highest: Double,
+    @SerializedName("isRealTime")
+    val isRealTime: Boolean,
     @SerializedName("last")
     val last: Double,
     @SerializedName("lowest")
     val lowest: Double,
+    @SerializedName("sell")
+    val sell: Double,
+    @SerializedName("spread")
+    val spread: Double,
     @SerializedName("timeOfLast")
     val timeOfLast: Long,
     @SerializedName("totalValueTraded")

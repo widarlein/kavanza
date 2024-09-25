@@ -103,6 +103,10 @@ interface AvanzaService {
     @GET("https://www.avanza.se/_api/market-guide/stock/{orderbookId}")
     fun getMarketGuideStock(@Path("orderbookId") orderbookId: String): Call<MarketGuideStock>
 
+    //TODO
+    @GET("api/trading-critical/rest/orderbook/{orderbookId}")
+    fun getOrderbook(@Path("orderbookId") orderbookId: String): Call<Any>
+
     /**
      * Gets prices over time for a specific orderbook
      *
