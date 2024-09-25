@@ -2,7 +2,8 @@ package com.github.widarlein.kavanza
 
 import com.eatthepath.otp.TimeBasedOneTimePasswordGenerator
 import com.github.widarlein.kavanza.model.*
-import com.github.widarlein.kavanza.model.getorders.GetOrdersResponse
+import com.github.widarlein.kavanza.model.getordersanddeals.GetDealsResponse
+import com.github.widarlein.kavanza.model.getordersanddeals.GetOrdersResponse
 import com.github.widarlein.kavanza.model.order.DeleteOrderOperation
 import com.github.widarlein.kavanza.model.positions.Positions
 import com.github.widarlein.kavanza.model.order.Order
@@ -249,6 +250,17 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
     override fun getOrders(): GetOrdersResponse {
         val response = avanzaService.getOrders().execute()
         check(response.isSuccessful) {"Get orders request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
+        return response.body()!!
+    }
+
+    /**
+     * Gets all deals of the logged in user
+     *
+     * @return a response containing the list of deals
+     */
+    override fun getDeals(): GetDealsResponse {
+        val response = avanzaService.getDeals().execute()
+        check(response.isSuccessful) {"Get deals request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
         return response.body()!!
     }
 

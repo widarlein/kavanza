@@ -1,7 +1,8 @@
 package com.github.widarlein.kavanza.service
 
 import com.github.widarlein.kavanza.model.*
-import com.github.widarlein.kavanza.model.getorders.GetOrdersResponse
+import com.github.widarlein.kavanza.model.getordersanddeals.GetDealsResponse
+import com.github.widarlein.kavanza.model.getordersanddeals.GetOrdersResponse
 import com.github.widarlein.kavanza.model.order.DeleteOrderOperation
 import com.github.widarlein.kavanza.model.positions.Positions
 import com.github.widarlein.kavanza.model.order.Order
@@ -49,6 +50,12 @@ interface AvanzaService {
      */
     @GET("/_api/trading/rest/orders")
     fun getOrders(): Call<GetOrdersResponse>
+
+    /**
+     * Gets all deals of the logged in user
+     */
+    @GET("/_api/trading/rest/deals")
+    fun getDeals(): Call<GetDealsResponse>
 
     /**
      * Gets all transactions of an account

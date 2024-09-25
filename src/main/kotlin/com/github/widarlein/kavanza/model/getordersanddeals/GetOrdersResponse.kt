@@ -1,4 +1,4 @@
-package com.github.widarlein.kavanza.model.getorders
+package com.github.widarlein.kavanza.model.getordersanddeals
 
 
 import com.google.gson.annotations.SerializedName
@@ -48,44 +48,4 @@ data class Order(
     val validUntil: String,
     @SerializedName("volume")
     val volume: Int
-)
-
-data class Orderbook(
-    @SerializedName("countryCode")
-    val countryCode: String,
-    @SerializedName("currency")
-    val currency: String,
-    @SerializedName("id")
-    val id: String,
-    @SerializedName("instrumentType")
-    val instrumentType: String,
-    @SerializedName("isin")
-    val isin: String,
-    @SerializedName("mic")
-    val mic: String,
-    @SerializedName("name")
-    val name: String,
-    @SerializedName("volumeFactor")
-    val volumeFactor: String
-)
-
-data class Account(
-    @SerializedName("accountId")
-    val accountId: String,
-    @SerializedName("name")
-    val name: Name,
-    @SerializedName("type")
-    val type: Type,
-    @SerializedName("urlParameterId")
-    val urlParameterId: String
-)
-
-data class Name(
-    @SerializedName("value")
-    val value: String
-)
-
-data class Type(
-    @SerializedName("accountType")
-    val accountType: String
 )
