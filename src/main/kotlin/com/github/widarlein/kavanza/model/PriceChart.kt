@@ -56,3 +56,11 @@ enum class TimePeriod {
 
     override fun toString() = super.toString().lowercase()
 }
+
+enum class ResolutionType {
+    DAY,
+    WEEK,
+    MONTH;
+
+    override fun toString() = super.toString().lowercase()
+}

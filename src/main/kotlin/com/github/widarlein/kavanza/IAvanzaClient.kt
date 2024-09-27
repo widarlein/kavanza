@@ -156,7 +156,8 @@ interface IAvanzaClient {
      *
      * @param orderbookId the ID of the stock in question
      * @param period the period over which to get the price
+     * @param resolution the resolution of the price data
      * @return chart data {@link com.github.widarlein.kavanza.model.PriceChart}
      */
-    fun getStockPriceChart(orderbookId: String, period: TimePeriod): PriceChart
+    fun getStockPriceChart(orderbookId: String, period: TimePeriod, resolution: ResolutionType = ResolutionType.DAY): PriceChart
 }

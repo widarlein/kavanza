@@ -194,10 +194,11 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      *
      * @param orderbookId the ID of the orderbook in question
      * @param period the period over which to get the price
+     * @param resolution the resolution of the price data
      * @return chart data {@link com.github.widarlein.kavanza.model.PriceChart}
      */
-    override fun getStockPriceChart(orderbookId: String, period: TimePeriod): PriceChart {
-        val response = avanzaService.getStockPriceChart(orderbookId, period).execute()
+    override fun getStockPriceChart(orderbookId: String, period: TimePeriod, resolution: ResolutionType): PriceChart {
+        val response = avanzaService.getStockPriceChart(orderbookId, period, resolution).execute()
         check(response.isSuccessful) {"Stock price chart request not successful ${response.message()} body: ${response.errorBody()}"}
         return response.body()!!
     }

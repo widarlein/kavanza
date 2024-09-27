@@ -38,6 +38,9 @@ data class Order(
     val price: Double,
     @SerializedName("side")
     val side: String,
+    /**
+     * ACTIVE, FAILED
+     */
     @SerializedName("state")
     val state: String,
     @SerializedName("stateMessage")
