@@ -3,11 +3,8 @@ package com.github.widarlein.kavanza.service
 import com.github.widarlein.kavanza.model.*
 import com.github.widarlein.kavanza.model.getordersanddeals.GetDealsResponse
 import com.github.widarlein.kavanza.model.getordersanddeals.GetOrdersResponse
-import com.github.widarlein.kavanza.model.order.DeleteOrderOperation
+import com.github.widarlein.kavanza.model.order.*
 import com.github.widarlein.kavanza.model.positions.Positions
-import com.github.widarlein.kavanza.model.order.Order
-import com.github.widarlein.kavanza.model.order.OrderOptions
-import com.github.widarlein.kavanza.model.order.OrderOperationResponse
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -191,6 +188,21 @@ interface AvanzaService {
      */
     @POST("/_api/trading-critical/rest/order/delete")
     fun deleteOrder(@Body orderOptions: DeleteOrderOperation): Call<OrderOperationResponse>
+
+    /**
+     * Place a stop loss order
+     *
+     * @param orderOptions options about the stop loss order to place
+     * @return a response indicating status and id of the order operation
+     */
+    @POST("_api/trading-critical/rest/stoploss/new")
+    fun placeStopLossOrder(@Body orderOptions: StopLossOperation): Call<StopLossOperationResponse>
+
+    /**
+     * Delete a stop loss order
+     */
+    @DELETE("_api/trading-critical/rest/stoploss/{accountId}/{stopLossId}")
+    fun deleteStopLoss(@Path("accountId") accountId: String, @Path("stopLossId") stopLossId: String): Call<Unit>
 
     /**
      * Free text search for an instrument

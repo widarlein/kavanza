@@ -4,11 +4,8 @@ import com.eatthepath.otp.TimeBasedOneTimePasswordGenerator
 import com.github.widarlein.kavanza.model.*
 import com.github.widarlein.kavanza.model.getordersanddeals.GetDealsResponse
 import com.github.widarlein.kavanza.model.getordersanddeals.GetOrdersResponse
-import com.github.widarlein.kavanza.model.order.DeleteOrderOperation
+import com.github.widarlein.kavanza.model.order.*
 import com.github.widarlein.kavanza.model.positions.Positions
-import com.github.widarlein.kavanza.model.order.Order
-import com.github.widarlein.kavanza.model.order.OrderOptions
-import com.github.widarlein.kavanza.model.order.OrderOperationResponse
 import com.github.widarlein.kavanza.service.AvanzaService
 import com.github.widarlein.kavanza.service.HeaderInterceptor
 import com.github.widarlein.kavanza.service.LoggingInterceptor
@@ -310,6 +307,16 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
         return response.body()!!
     }
 
+    /**
+     * Place a stop loss order
+     * @param orderOperation options about the stop loss order to place
+     * @return a response indicating status and id of the order operation
+     */
+    override fun placeStopLoss(orderOperation: StopLossOperation): StopLossOperationResponse {
+        val response = avanzaService.placeStopLossOrder(orderOperation).execute()
+        check(response.isSuccessful) {"Place stop loss order request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
+        return response.body()!!
+    }
 
     /**
      * Free text search for an instrument

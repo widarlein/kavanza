@@ -3,9 +3,7 @@ package com.github.widarlein.kavanza
 import com.github.widarlein.kavanza.model.*
 import com.github.widarlein.kavanza.model.getordersanddeals.GetDealsResponse
 import com.github.widarlein.kavanza.model.getordersanddeals.GetOrdersResponse
-import com.github.widarlein.kavanza.model.order.Order
-import com.github.widarlein.kavanza.model.order.OrderOperationResponse
-import com.github.widarlein.kavanza.model.order.OrderOptions
+import com.github.widarlein.kavanza.model.order.*
 import com.github.widarlein.kavanza.model.positions.Positions
 
 interface IAvanzaClient {
@@ -150,6 +148,13 @@ interface IAvanzaClient {
      * @return a response indicating status and id of the order operation
      */
     fun modifyOrder(orderOptions: OrderOptions): OrderOperationResponse
+
+    /**
+     * Place a stop loss order
+     * @param orderOperation options about the stop loss order to place
+     * @return a response indicating status and id of the order operation
+     */
+    fun placeStopLoss(orderOperation: StopLossOperation): StopLossOperationResponse
 
     /**
      * Gets prices over time for a specific stock and only stock
