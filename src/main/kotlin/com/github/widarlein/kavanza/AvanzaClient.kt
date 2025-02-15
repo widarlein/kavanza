@@ -17,6 +17,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.RuntimeException
 import java.time.Instant
+import java.util.UUID
 import javax.crypto.spec.SecretKeySpec
 
 private const val BASE_URL = "https://www.avanza.se/"
@@ -322,12 +323,29 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      * Free text search for an instrument
      *
      * @param searchQuery the text query to search for
-     * @param instrumentType only search for instruments of this type. Defaults to NONE which searches among all types
+     * @param instrumentType only search for instruments of this type. Defaults to null which searches among all types
      * @return the result of the search query
      */
-    override fun search(searchQuery: String, instrumentType: InstrumentType): SearchHits {
-        val response = avanzaService.search(instrumentType, searchQuery, 100).execute()
+    override fun search(searchQuery: String, instrumentType: InstrumentType?): SearchResponse {
+        val searchRequest = SearchRequest(
+            query = searchQuery,
+            originPath = "/start",
+            originPlatform = "PWA",
+            pagination = Pagination(0, 30),
+            screenSize = "DESKTOP",
+            searchFilter = SearchFilter(
+                types = if (instrumentType != null) {
+                    listOf(instrumentType.toString().uppercase())
+                } else {
+                    listOf()
+                }
+            ),
+            searchSessionId = UUID.randomUUID().toString()
+        )
+
+        val response = avanzaService.search(searchRequest).execute()
         check(response.isSuccessful) {"Search request not successful ${response.message()} body: ${response.errorBody()}"}
+
         return response.body()!!
     }
 }

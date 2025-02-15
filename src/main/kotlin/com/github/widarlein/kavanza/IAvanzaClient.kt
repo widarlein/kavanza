@@ -136,10 +136,10 @@ interface IAvanzaClient {
      * Free text search for an instrument
      *
      * @param searchQuery the text query to search for
-     * @param instrumentType only search for instruments of this type. Defaults to NONE which searches among all types
+     * @param instrumentType only search for instruments of this type. Defaults to null which searches among all types
      * @return the result of the search query
      */
-    fun search(searchQuery: String, instrumentType: InstrumentType = InstrumentType.NONE): SearchHits
+    fun search(searchQuery: String, instrumentType: InstrumentType? = null): SearchResponse
 
     /**
      * Modify an order

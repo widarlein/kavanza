@@ -207,11 +207,9 @@ interface AvanzaService {
     /**
      * Free text search for an instrument
      *
-     * @param searchQuery the text query to search for
-     * @param instrumentType only search for instruments of this type. Defaults to NONE which searches among all types
-     * @param limit the max number of search hits to return
+     * @param searchRequest The payload for the search request
      * @return the result of the search query
      */
-    @GET("/_mobile/market/search/{instrumentType}")
-    fun search(@Path("instrumentType") instrumentType: InstrumentType, @Query("query") searchQuery: String, @Query("limit") limit: Int): Call<SearchHits>
+    @POST("/_api/search/filtered-search")
+    fun search(@Body searchRequest: SearchRequest): Call<SearchResponse>
 }
