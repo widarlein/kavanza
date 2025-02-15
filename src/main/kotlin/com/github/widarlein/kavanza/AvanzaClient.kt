@@ -15,9 +15,8 @@ import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import java.lang.RuntimeException
 import java.time.Instant
-import java.util.UUID
+import java.util.*
 import javax.crypto.spec.SecretKeySpec
 
 private const val BASE_URL = "https://www.avanza.se/"
