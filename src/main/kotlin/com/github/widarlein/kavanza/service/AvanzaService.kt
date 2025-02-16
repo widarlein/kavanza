@@ -195,13 +195,13 @@ interface AvanzaService {
      * @param orderOptions options about the stop loss order to place
      * @return a response indicating status and id of the order operation
      */
-    @POST("_api/trading-critical/rest/stoploss/new")
+    @POST("_api/trading/stoploss/new")
     fun placeStopLossOrder(@Body orderOptions: StopLossOperation): Call<StopLossOperationResponse>
 
     /**
      * Delete a stop loss order
      */
-    @DELETE("_api/trading-critical/rest/stoploss/{accountId}/{stopLossId}")
+    @DELETE("_api/trading/stoploss/{accountId}/{stopLossId}")
     fun deleteStopLoss(@Path("accountId") accountId: String, @Path("stopLossId") stopLossId: String): Call<Unit>
 
     /**

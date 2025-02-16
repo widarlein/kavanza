@@ -319,6 +319,16 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
     }
 
     /**
+     * Delete a stop loss order
+     * @param accountId the ID of the account of the order
+     * @param stopLossId the ID of the stop loss order
+     */
+    override fun deleteStopLoss(accountId: AccountId, stopLossId: String) {
+        val response = avanzaService.deleteStopLoss(accountId.value, stopLossId).execute()
+        check(response.isSuccessful) {"Delete stop loss request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
+    }
+
+    /**
      * Free text search for an instrument
      *
      * @param searchQuery the text query to search for

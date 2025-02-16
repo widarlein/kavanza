@@ -157,6 +157,14 @@ interface IAvanzaClient {
     fun placeStopLoss(orderOperation: StopLossOperation): StopLossOperationResponse
 
     /**
+     * Delete a stop loss order
+     *
+     * @param accountId the ID of the account of the order
+     * @param stopLossId the ID of the stop loss order
+     */
+    fun deleteStopLoss(accountId: AccountId, stopLossId: String)
+
+    /**
      * Gets prices over time for a specific stock and only stock
      *
      * @param orderbookId the ID of the stock in question
