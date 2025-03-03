@@ -212,4 +212,15 @@ interface AvanzaService {
      */
     @POST("/_api/search/filtered-search")
     fun search(@Body searchRequest: SearchRequest): Call<SearchResponse>
+
+    /**
+     * Get exchange rate between two currencies
+     *
+     * @param currencyFrom the currency to convert from
+     * @param currencyTo the currency to convert to
+     * @return the exchange rate
+     */
+    @GET("/_api/trading/rest/exchangerate/{currencyFrom}/{currencyTo}")
+    fun getExchangeRate(@Path("currencyFrom") currencyFrom: String, @Path("currencyTo") currencyTo: String): Call<ExchangeRate>
+
 }

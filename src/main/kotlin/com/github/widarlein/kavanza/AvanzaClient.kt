@@ -201,6 +201,19 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
     }
 
     /**
+     * Gets the exchange rate between two currencies
+     *
+     * @param fromCurrency the currency to convert from
+     * @param toCurrency the currency to convert to
+     * @return the exchange rate
+     */
+    override fun getExchangeRate(fromCurrency: String, toCurrency: String): ExchangeRate {
+        val response = avanzaService.getExchangeRate(fromCurrency, toCurrency).execute()
+        check(response.isSuccessful) {"Exchange rate request not successful ${response.message()} body: ${response.errorBody()}"}
+        return response.body()!!
+    }
+
+    /**
      * Gets details about a specified instrument
      *
      * @param instrumentType the type of instrument wanted

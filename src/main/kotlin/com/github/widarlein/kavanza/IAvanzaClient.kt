@@ -173,4 +173,14 @@ interface IAvanzaClient {
      * @return chart data {@link com.github.widarlein.kavanza.model.PriceChart}
      */
     fun getStockPriceChart(orderbookId: String, period: TimePeriod, resolution: ResolutionType = ResolutionType.DAY): PriceChart
+
+    /**
+     * Gets exchange rate between two currencies
+     *
+     * @param fromCurrency the currency to convert from
+     * @param toCurrency the currency to convert to
+     *
+     * @return the exchange rate, i.e. the number to multiply with to convert from fromCurrency to toCurrency
+     */
+    fun getExchangeRate(fromCurrency: String, toCurrency: String): ExchangeRate
 }
