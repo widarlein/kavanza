@@ -13,13 +13,21 @@ object HeaderInterceptor : Interceptor {
             .also {
                 val authenticationHeaders = this.authenticationHeaders
                 if (authenticationHeaders != null) {
-                    it.header("X-AuthenticationSession", authenticationHeaders.authenticationSession)
                     it.header("X-SecurityToken", authenticationHeaders.securityToken)
-                } }
+                    it.header("Cookie", authenticationHeaders.csCookie)
+                }
+            }
             .build()
 
         return chain.proceed(request)
     }
 
-    data class AuthenticationHeaders(val authenticationSession: String, val securityToken: String)
+    data class AuthenticationHeaders(
+        val securityToken: String,
+        val csid: String,
+        val cstoken: String
+    ) {
+        val csCookie
+            get() = "csid=$csid; cstoken=$cstoken;"
+    }
 }

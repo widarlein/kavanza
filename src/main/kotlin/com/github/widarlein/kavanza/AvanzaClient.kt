@@ -69,9 +69,15 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
 
         val totpResponse = totpCallResponse.body()
         if (totpCallResponse.isSuccessful && totpResponse != null) {
+            val cookies = totpCallResponse.headers().values("Set-Cookie")
+            val csid = cookies.firstOrNull { it.startsWith("CSID=", ignoreCase = true) }?.substringAfter('=')?.substringBefore(';')
+            val cstoken = cookies.firstOrNull { it.startsWith("CSTOKEN=", ignoreCase = true) }?.substringAfter('=')?.substringBefore(';')
+            checkNotNull(csid) { "CSID cookie not found in response headers" }
+            checkNotNull(cstoken) { "CSTOKEN cookie not found in response headers" }
             HeaderInterceptor.authenticationHeaders = HeaderInterceptor.AuthenticationHeaders(
-                totpResponse.authenticationSession,
-                totpCallResponse.headers()["X-SecurityToken"]!!
+                securityToken = totpCallResponse.headers()["X-SecurityToken"]!!,
+                csid = csid,
+                cstoken = cstoken
             )
         } else {
             throw RuntimeException("Could not perform login totp procedure response was ${totpCallResponse.message()} body: ${totpCallResponse.errorBody()}")
