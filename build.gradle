@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.github.widarlein'
 group 'com.github.widarlein'
-version '2.1'
+version '2.4'
 
 repositories {
     mavenCentral()
