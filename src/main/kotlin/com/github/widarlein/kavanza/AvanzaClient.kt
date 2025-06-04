@@ -48,7 +48,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
         val loginCall: Call<LoginResponse> = avanzaService.login(userCredentials)
         val loginCallResponse = loginCall.execute()
         if (!loginCallResponse.isSuccessful) {
-            throw RuntimeException("Could not perform login procedure response was ${loginCallResponse.message()} body: ${loginCallResponse.errorBody()}")
+            throw RuntimeException("Could not perform login procedure response was ${loginCallResponse.message()} body: ${loginCallResponse.errorBody()?.string()}")
         }
         val loginResponse = loginCallResponse.body()
 
@@ -80,7 +80,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
                 cstoken = cstoken
             )
         } else {
-            throw RuntimeException("Could not perform login totp procedure response was ${totpCallResponse.message()} body: ${totpCallResponse.errorBody()}")
+            throw RuntimeException("Could not perform login totp procedure response was ${totpCallResponse.message()} body: ${totpCallResponse.errorBody()?.string()}")
         }
 
     }
@@ -90,14 +90,14 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      */
     override fun getOverview(): Overview {
         val response = avanzaService.getOverview().execute()
-        check(response.isSuccessful) {"Overview request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Overview request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
         return response.body()!!
     }
 
 
     override fun getCategorizedAccountsOverview(): CategorizedAccountsOverview {
         val response = avanzaService.getCategorizedAccountsOverview().execute()
-        check(response.isSuccessful) {"Categorized accounts overview request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Categorized accounts overview request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
         return response.body()!!
     }
 
@@ -106,7 +106,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      */
     override fun getPositions(): Positions {
         val response = avanzaService.getPostions().execute()
-        check(response.isSuccessful) { "Positions request not successful ${response.message()} body: ${response.errorBody()}" }
+        check(response.isSuccessful) { "Positions request not successful ${response.message()} body: ${response.errorBody()?.string()}" }
         return response.body()!!
     }
 
@@ -137,7 +137,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
         }
 
         val response = avanzaService.getTransactions(accountOrTransactionType, queryMap).execute()
-        check(response.isSuccessful) {"Transactions request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Transactions request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
         return response.body()!!
     }
 
@@ -148,7 +148,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      */
     override fun getWatchlists(): List<Watchlist> {
         val response = avanzaService.getWatchlists().execute()
-        check(response.isSuccessful) {"Watchlist request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Watchlist request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
         return response.body()!!
     }
 
@@ -160,7 +160,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      */
     override fun addToWatchlist(watchlistId: String, orderbookId: String) {
         val response = avanzaService.addToWatchlist(watchlistId, orderbookId).execute()
-        check(response.isSuccessful) {"Add to watchlist request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Add to watchlist request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
     }
 
     /**
@@ -171,7 +171,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      */
     override fun removeFromWatchlist(watchlistId: String, orderbookId: String) {
         val response = avanzaService.removeFromWatchlist(watchlistId, orderbookId).execute()
-        check(response.isSuccessful) {"Remove from watchlist request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Remove from watchlist request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
     }
 
     /**
@@ -182,13 +182,13 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      */
     override fun getOrderbooks(orderbookIds: List<String>): List<OrderbookListItem> {
         val response = avanzaService.getOrderbooks(orderbookIds.joinToString(",")).execute()
-        check(response.isSuccessful) {"Orderbook list request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Orderbook list request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
         return response.body()!!
     }
 
     override fun getMarketGuideStock(orderbookId: String): MarketGuideStock {
         val response = avanzaService.getMarketGuideStock(orderbookId).execute()
-        check(response.isSuccessful) {"Market guide stock request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Market guide stock request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
         return response.body()!!
     }
 
@@ -202,7 +202,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      */
     override fun getStockPriceChart(orderbookId: String, period: TimePeriod, resolution: ResolutionType): PriceChart {
         val response = avanzaService.getStockPriceChart(orderbookId, period, resolution).execute()
-        check(response.isSuccessful) {"Stock price chart request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Stock price chart request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
         return response.body()!!
     }
 
@@ -215,7 +215,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      */
     override fun getExchangeRate(fromCurrency: String, toCurrency: String): ExchangeRate {
         val response = avanzaService.getExchangeRate(fromCurrency, toCurrency).execute()
-        check(response.isSuccessful) {"Exchange rate request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Exchange rate request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
         return response.body()!!
     }
 
@@ -235,7 +235,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
     override fun getInspirationLists(): List<InspirationList> {
         TODO("Endpoint not returning reliable data. See FIXME in related AvanzaService.kt endpoint")
         val response = avanzaService.getInspirationLists().execute()
-        check(response.isSuccessful) {"Inspiration lists request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Inspiration lists request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
         return response.body()!!
     }
 
@@ -243,7 +243,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
     override fun getInspirationLists(listType: ListType): InspirationList {
         TODO("Endpoint not returning reliable data. See FIXME in related AvanzaService.kt endpoint")
         val response = avanzaService.getInspirationList(listType).execute()
-        check(response.isSuccessful) {"Inspiration list request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Inspiration list request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
         return response.body()!!
     }
 
@@ -255,7 +255,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      */
     override fun placeOrder(orderOptions: OrderOptions): OrderOperationResponse {
         val response = avanzaService.placeOrder(orderOptions).execute()
-        check(response.isSuccessful) {"Place order request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Place order request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
         return response.body()!!
     }
 
@@ -292,7 +292,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
     @Deprecated("Doesn't work, don't know the replacement")
     override fun getOrder(instrumentType: InstrumentType, accountId: AccountId, orderId: String): Order {
         val response = avanzaService.getOrder(instrumentType, accountId.value, orderId).execute()
-        check(response.isSuccessful) {"Edit order request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Edit order request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
         return response.body()!!
     }
 
@@ -304,7 +304,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
      */
     override fun modifyOrder(orderOptions: OrderOptions): OrderOperationResponse {
         val response = avanzaService.modifyOrder(orderOptions).execute()
-        check(response.isSuccessful) {"Edit order request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Edit order request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
         return response.body()!!
     }
 
@@ -322,7 +322,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
                 orderId = orderId,
             )
         ).execute()
-        check(response.isSuccessful) {"Delete order request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Delete order request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
         return response.body()!!
     }
 
@@ -372,7 +372,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
         )
 
         val response = avanzaService.search(searchRequest).execute()
-        check(response.isSuccessful) {"Search request not successful ${response.message()} body: ${response.errorBody()}"}
+        check(response.isSuccessful) {"Search request not successful ${response.message()} body: ${response.errorBody()?.string()}"}
 
         return response.body()!!
     }
