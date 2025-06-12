@@ -45,6 +45,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
     private val avanzaService: AvanzaService = retrofit.create(AvanzaService::class.java)
 
     internal fun login(userCredentials: UserCredentials, totpSecret: String) {
+        HeaderInterceptor.startUserAgentSession()
         val loginCall: Call<LoginResponse> = avanzaService.login(userCredentials)
         val loginCallResponse = loginCall.execute()
         if (!loginCallResponse.isSuccessful) {
@@ -80,7 +81,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
                 cstoken = cstoken
             )
         } else {
-            throw RuntimeException("Could not perform login totp procedure response was ${totpCallResponse.message()} body: ${totpCallResponse.errorBody()?.string()}")
+            throw RuntimeException("Could not perform login totp procedure response was ${totpCallResponse.message() ?: "<empty>"}, body: ${totpCallResponse.errorBody()?.string()}")
         }
 
     }
