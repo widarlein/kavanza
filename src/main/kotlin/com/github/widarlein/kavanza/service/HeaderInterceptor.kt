@@ -3,7 +3,7 @@ package com.github.widarlein.kavanza.service
 import okhttp3.Interceptor
 import okhttp3.Response
 
-object HeaderInterceptor : Interceptor {
+class HeaderInterceptor : Interceptor {
 
     var authenticationHeaders: AuthenticationHeaders? = null
 

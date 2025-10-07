@@ -145,3 +145,6 @@ gradle-app.setting
 
 TestingModule*/
 !totpcodegen-1.0.jar
+stuff/
+AvanzaClientLiveTester.kt
+log.txt

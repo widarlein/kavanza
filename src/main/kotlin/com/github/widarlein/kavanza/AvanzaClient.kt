@@ -24,22 +24,23 @@ private const val TRANSACTION_COOKIE = "AZAMFATRANSACTION="
 
 class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient {
 
-    private val retrofit = Retrofit.Builder()
-        .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
-        .client(
-            OkHttpClient.Builder()
-                .addInterceptor(HeaderInterceptor).also {
-                    if (debugPrintouts) {
-                        it.addInterceptor(LoggingInterceptor)
-                    }
-                }
-                .build()
-        )
-        .build()
+    private val retrofit: Retrofit
+    private val headerInterceptor: HeaderInterceptor = HeaderInterceptor()
 
     init {
-
+        retrofit = Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(
+                OkHttpClient.Builder()
+                    .addInterceptor(headerInterceptor).also {
+                        if (debugPrintouts) {
+                            it.addInterceptor(LoggingInterceptor)
+                        }
+                    }
+                    .build()
+            )
+            .build()
     }
 
     private val avanzaService: AvanzaService = retrofit.create(AvanzaService::class.java)
@@ -74,7 +75,7 @@ class AvanzaClient(private val debugPrintouts: Boolean = false) : IAvanzaClient 
             val cstoken = cookies.firstOrNull { it.startsWith("CSTOKEN=", ignoreCase = true) }?.substringAfter('=')?.substringBefore(';')
             checkNotNull(csid) { "CSID cookie not found in response headers" }
             checkNotNull(cstoken) { "CSTOKEN cookie not found in response headers" }
-            HeaderInterceptor.authenticationHeaders = HeaderInterceptor.AuthenticationHeaders(
+            headerInterceptor.authenticationHeaders = HeaderInterceptor.AuthenticationHeaders(
                 securityToken = totpCallResponse.headers()["X-SecurityToken"]!!,
                 csid = csid,
                 cstoken = cstoken
