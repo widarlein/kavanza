@@ -1,30 +1,32 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm' version '1.6.21'
+    id 'org.jetbrains.kotlin.jvm' version '1.9.10'
     id 'org.jetbrains.dokka' version '1.8.10'
     id 'maven-publish'
 }
 
 group = 'com.github.widarlein'
 group 'com.github.widarlein'
-version '2.4'
+version '3.0'
 
 repositories {
     mavenCentral()
     maven { url "https://jitpack.io" }
-    jcenter()
 }
 
 dependencies {
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21'
-    implementation "com.squareup.retrofit2:retrofit:2.6.1"
-    implementation "com.squareup.retrofit2:converter-gson:2.6.1"
-    implementation "com.squareup.okhttp3:okhttp:4.1.0"
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10'
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation "com.squareup.okhttp3:okhttp:4.12.0"
     implementation "com.eatthepath:java-otp:0.2.0"
-    implementation "com.google.guava:guava:28.0-jre"
+    implementation "com.google.guava:guava:33.5.0-jre"
 
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
