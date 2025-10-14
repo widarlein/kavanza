@@ -28,7 +28,11 @@ data class StopLossOrderEvent(
      * MONETARY works. Unclear what else there is
      */
     @SerializedName("priceType")
-    val priceType: String = "MONETARY",
+    val priceType: StopLossOrderPriceType = StopLossOrderPriceType.MONETARY,
+
+    /**
+     * I've only seen false here
+     */
     @SerializedName("shortSellingAllowed")
     val shortSellingAllowed: Boolean = false,
     @SerializedName("type")
@@ -47,11 +51,10 @@ data class StopLossTrigger(
     val triggerOnMarketMakerQuote: Boolean,
 
     /**
-     * LESS_OR_EQUAL for i.e. selling when price drops under a certain price
-     * MORE_OR_EQUAL  for i.e. buying when price rises above a certain price
+     * See [StopLossTriggerType] enum
      */
     @SerializedName("type")
-    val type: String,
+    val type: StopLossTriggerType,
     /**
      * Format: 2024-10-29
      * Avanza default is 1 month from placing the stop loss.
@@ -60,11 +63,8 @@ data class StopLossTrigger(
     val validUntil: String,
     @SerializedName("value")
     val value: Double,
-    /**
-     * MONETARY works. Unclear what else there is
-     */
     @SerializedName("valueType")
-    val valueType: String = "MONETARY"
+    val valueType: StopLossTriggerValueType = StopLossTriggerValueType.MONETARY
 )
 
 data class StopLossOperationResponse(
@@ -73,3 +73,35 @@ data class StopLossOperationResponse(
     @SerializedName("stoplossOrderId")
     val stoplossOrderId: String
 )
+
+enum class StopLossTriggerType {
+    /**
+     * LESS_OR_EQUAL for i.e. selling when price drops under a certain price
+     */
+    LESS_OR_EQUAL,
+
+    /**
+     * MORE_OR_EQUAL for i.e. buying when price rises above a certain price
+     */
+    MORE_OR_EQUAL,
+
+    /**
+     * FOLLOW_UPWARDS for trailing stop loss when selling
+     */
+    FOLLOW_UPWARDS,
+
+    /**
+     * FOLLOW_DOWNWARDS for trailing stop loss when buying
+     */
+    FOLLOW_DOWNWARDS
+}
+
+enum class StopLossTriggerValueType {
+    MONETARY,
+    PERCENTAGE
+}
+
+enum class StopLossOrderPriceType {
+    MONETARY,
+    PERCENTAGE
+}
