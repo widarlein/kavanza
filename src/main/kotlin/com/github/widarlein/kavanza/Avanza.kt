@@ -12,4 +12,13 @@ object Avanza {
      */
     fun connect(userCredentials: UserCredentials, totpSecret: String, debugPrintouts: Boolean = false): AvanzaClient =
         AvanzaClient(debugPrintouts).also { it.login(userCredentials, totpSecret) }
+
+    /**
+     * Returns an Avanza client without logging in. The client can be used for endpoints that don't
+     * require authentication, such as price charts and exchange rates. Calling endpoints that require
+     * authentication will fail.
+     *
+     * @return an unauthenticated Avanza client
+     */
+    fun unauthenticatedClient(debugPrintouts: Boolean = false): AvanzaClient = AvanzaClient(debugPrintouts)
 }
